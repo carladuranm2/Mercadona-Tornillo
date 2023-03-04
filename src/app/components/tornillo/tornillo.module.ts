@@ -27,6 +27,11 @@ import {SharedModule}  from 'src/app/shared/shared.module'
     FormControl,
     MatDialog
   ],
+  exports:[
+    TornilloComponent,
+    CrearTornilloComponent,
+    TableTornilloComponent
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TornilloModule { }
