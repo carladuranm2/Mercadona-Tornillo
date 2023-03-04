@@ -1,0 +1,9 @@
+<div class="container-loading-progress">
+  <div [ngStyle]="{'height.px': heightTinyLine, 'background-color': colorTinyLine}" class="tiny-progress-line">
+      <div [ngStyle]="{'height.px': height, 'background-color': color, 'width.%': ( getProgressValue(currentProgress/goal*100))}" class="progress-bar">
+          <div [ngStyle]="{'border': '3px solid '+ color}" class="progress-bar-card">
+              <p>{{(currentProgress/goal*100) | number:'0.1-1'}}</p>
+          </div>
+      </div>
+  </div>
+</div>
