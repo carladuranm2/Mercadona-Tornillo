@@ -1,0 +1,18 @@
+.header-content{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  button{
+    background-color: grey;
+    color: #fff;
+    border: none;
+  }
+}
+.logoMercadona{
+  width: 30px;
+  height: 30px;
+}
+.border-header-content{
+  border-bottom: 3px solid green;
+
+}

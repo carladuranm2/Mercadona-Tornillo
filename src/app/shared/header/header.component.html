@@ -1,0 +1,7 @@
+<div class="border-header-content">
+  <div class="header-content">
+    <img (click)="backToHomePage()" class="logoMercadona" src="./assets/images/logoMercadona.jpeg" alt="logo">
+    <button *ngIf="inicioSesion" (click)="navigateLogin()">Iniciar sesion</button>
+    <button *ngIf="cerrarSesion" (click)="logOut()">Cerrar sesion</button>
+  </div>
+</div>
