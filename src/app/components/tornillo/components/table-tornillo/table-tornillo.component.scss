@@ -1,0 +1,10 @@
+table{
+  width: 100%;
+}
+thead{
+  background-color: rgb(216, 213, 213);
+  height: 60px;
+}
+table tr:nth-child(even) {
+  background-color: rgb(168, 184, 204);
+}

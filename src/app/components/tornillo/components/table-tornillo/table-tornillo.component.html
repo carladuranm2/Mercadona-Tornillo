@@ -1,0 +1,58 @@
+<table class="table align-middle mb-0 bg-white">
+  <thead class="bg-light">
+      <tr>
+        <th *ngFor=" let title of titles">{{title.name}}</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of itemTitle| paginate : { itemsPerPage: 5, currentPage: page }">
+      <td >
+        <div class="d-flex align-items-center">
+          <div class="ms-3">
+            <p class="text-muted mb-0">{{item.nombre}}</p>
+          </div>
+        </div>
+      </td>
+      <td>
+        <p class="text-muted mb-0">{{item.precio}}</p>
+      </td>
+      <td>
+        <span class="badge badge-success rounded-pill d-inline">{{item.formato}}</span>
+      </td>
+      <td>{{item.marca}}</td>
+      <td>
+        <button type="button" class="btn btn-link btn-sm btn-rounded">
+          {{item.actions}}
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Items por pagina
+      </td>
+      <td>
+        20
+      </td>
+      <td>
+        1-20 de 200 items
+      </td>
+      <td>
+        1 de 10 paginas
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="d-flex justify-content-between">
+  <div class="card-footer pb-0 pt-3">
+    5 of {{itemTitle.length}}
+  </div>
+  <!-- <div class="card-footer pb-0 pt-3">
+    <pagination-controls
+    (pageChange)="page=$event"
+    previousLabel=""
+    nextLabel=""
+    screenReaderPaginationLabel="Pagination"
+    screenReaderPageLabel="page">
+    </pagination-controls>
+  </div> -->
+</div>
