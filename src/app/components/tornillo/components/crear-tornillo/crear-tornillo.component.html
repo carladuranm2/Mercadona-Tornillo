@@ -1,0 +1,18 @@
+<p>crear-tornillo works!</p>
+<div>
+  <div class="content-create-product">
+    <h2>Nuevo producto</h2>
+    <form formGroup="newProduct" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" formControlName="name">
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button mat-button cdkFocusInitial>Guardar</button>
+</div>
