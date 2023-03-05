@@ -6,9 +6,18 @@ import { TornilloComponent } from './tornillo.component';
 import { CrearTornilloComponent } from './components/crear-tornillo/crear-tornillo.component';
 import { TableTornilloComponent } from './components/table-tornillo/table-tornillo.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { FormControl } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 import {SharedModule}  from 'src/app/shared/shared.module'
+import {MatIconModule} from '@angular/material/icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { EliminarTornilloComponent } from './components/eliminar-tornillo/eliminar-tornillo.component';
+import {MatSelectModule} from '@angular/material/select';
+import { OrdenarColumnasTornilloComponent } from './components/ordenar-columnas-tornillo/ordenar-columnas-tornillo.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 
 
@@ -16,16 +25,23 @@ import {SharedModule}  from 'src/app/shared/shared.module'
   declarations: [
     TornilloComponent,
     CrearTornilloComponent,
-    TableTornilloComponent
+    TableTornilloComponent,
+    EliminarTornilloComponent,
+    OrdenarColumnasTornilloComponent
   ],
   imports: [
-    CommonModule,
     TornilloRoutingModule,
     NgxPaginationModule,
     SharedModule,
     MatDialogModule,
-    FormControl,
-    MatDialog
+    MatIconModule,
+    FormsModule,
+    CommonModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    DragDropModule
   ],
   exports:[
     TornilloComponent,
