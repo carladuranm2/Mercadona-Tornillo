@@ -24,6 +24,15 @@ export class CrearTornilloComponent implements OnInit {
     });
   }
 
+
+    /**
+ * esta función agregaun nuevo producto a un arreglo
+ * data y muestra una notificación de éxito o error utilizando la biblioteca SweetAlert2.
+ * También cierra una caja de diálogo, ya que el formulario se muestra en
+ * un modal y que se está cerrando después de enviarlo.
+ * @param newProduct.
+ * @param dialogRef.
+ */
   onSubmit () {
     if (this.newProduct.valid) {
       this.data.name.push(this.newProduct.value);
@@ -47,8 +56,8 @@ export class CrearTornilloComponent implements OnInit {
   incrementarCantidad () {
     this.cantidad = this.cantidad + 1;
     this.newProduct.get('precio').setValue(this.cantidad);
-
   }
+
   decrementarCantidad () {
     if (this.cantidad === 0) {
       this.cantidad = this.cantidad - 0;
