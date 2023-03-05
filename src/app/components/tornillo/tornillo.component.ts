@@ -1,10 +1,13 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { TableItem } from 'src/app/models/tableItem';
+import { TitleColumn } from 'src/app/models/titleColumn';
 import { CrearTornilloComponent } from './components/crear-tornillo/crear-tornillo.component'
 import { OrdenarColumnasTornilloComponent } from './components/ordenar-columnas-tornillo/ordenar-columnas-tornillo.component';
 
-const EXAMPLE_DATA = [
+const EXAMPLE_DATA: TableItem[] = [
   {
     id: 1,
     nombre: 'Tornillo naranja',
@@ -90,7 +93,7 @@ const EXAMPLE_DATA = [
   styleUrls: ['./tornillo.component.scss']
 })
 export class TornilloComponent implements OnInit {
-  titles = [
+  titles: TitleColumn[] = [
     { name: 'Nombre', visible: true, locked: false },
     { name: 'Precio', visible: true, locked: false },
     { name: 'Formato', visible: true, locked: false },
@@ -98,44 +101,39 @@ export class TornilloComponent implements OnInit {
     { name: 'Acciones', visible: true, locked: false }
   ]
   columnStates = [];
-  tableItems: any = []
-  tableItemsToFilter: any = []
-  datosFilters = [
-    { id: 1, name: 'Sent', value: 'sent', status: false },
-    { id: 2, name: 'Working', value: 'working', status: false },
-    { id: 3, name: 'Updated', value: 'updated', status: false },
-    { id: 4, name: 'Ready', value: 'ready', status: false },
-    { id: 5, name: 'Invoice', value: 'invoice', status: false },
-    { id: 6, name: 'Paid', value: 'paid', status: false },
-    { id: 7, name: 'Cancel', value: 'cancel', status: false },
-  ];
+  tableItems: TableItem[] = [];
+  tableItemsToFilter = []
   totalItems: number = 0;
   pageSize: number = 0;
   previousPage: number = 0;
   showPagination: boolean = false;
   isLoading:boolean = true;
   page: any;
-  order: any;
+  order: number;
   currentPage: number = 0;
   active: boolean = false;
   filter = {
     'filter': ''
   }
-  constructor(private router: Router, public dialog: MatDialog) {
+  constructor(private router: Router, public dialog: MatDialog) {}
 
-  }
   ngOnInit () {
     this.getDataTableService();
-    this.titles.forEach(column => {
-      this.columnStates.push({ name: column.name, visible: column.visible, locked: column.locked });
-    });
   }
 
+  /**
+ * Este método carga datos de ejemplos para la tabla, la funcion utiliza setTimeOut para simular
+ * una funcion asincrona que tarda 2 segundos en completarse, Durante este tiempo establece las propiedades
+ * isloading en true para mostrar una indicacion de carga en la interfaz de usuario, despues de los 2
+ * segundos establece tableItemsen EXAMPLE_DATA, una constante que contiene los datos de
+ * ejemplo para la tabla. Finalmente, establece isLoading en false para ocultar la indicación de carga..
+ * @propiedades tableItems.
+ * @propiedades isLoading.
+ */
   getDataTableService () {
     this.isLoading = true;
     setTimeout(() => {
       this.tableItems = EXAMPLE_DATA
-      this.tableItemsToFilter = EXAMPLE_DATA
       this.isLoading= false;
     }, 2000)
   }
@@ -148,6 +146,7 @@ export class TornilloComponent implements OnInit {
       },
     );
   }
+
   openConfiguration () {
     const dialogRef = this.dialog.open(OrdenarColumnasTornilloComponent,
       {
