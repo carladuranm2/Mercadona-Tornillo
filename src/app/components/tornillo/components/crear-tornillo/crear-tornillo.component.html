@@ -1,18 +1,41 @@
-<p>crear-tornillo works!</p>
 <div>
   <div class="content-create-product">
     <h2>Nuevo producto</h2>
-    <form formGroup="newProduct" (ngSubmit)="onSubmit()">
-      <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" formControlName="name">
+    <form [formGroup]="newProduct" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <label for="nombre">Nombre</label>
+        <input class="container-buttons" type="text" id="nombre" formControlName="nombre">
+      </div>
+      <div class="position-midle-item">
+        <div class="row input-container size-row">
+          <label for="precio">Precio</label>
+          <!-- <input matInput  style="width: 100px;" class="container-buttons" type="number"  id="precio" min="0" max="10" [formControl]="newProduct.value.precio"> -->
+          <div class="button-container container-buttons">
+            <button mat-button matSuffix (click)="incrementarCantidad()"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add"></mat-icon>
+            </button>
+            {{cantidad}}
+            <button mat-button matSuffix (click)="decrementarCantidad()"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove"></mat-icon>
+            </button>
+          </div>
+        </div>
+        <div class="row input-container size-row"  style=" margin-left: 20px;">
+          <mat-label>Formato</mat-label>
+            <select  class="select-formato"   formControlName="formato" >
+              <option value="">Seleccione un valor</option>
+              <option value="apple">Tornillo rosado</option>
+              <option value="banana">Tornillo morado</option>
+              <option value="orange">Tornillo naranja</option>
+            </select>
+        </div>
       </div>
       <div>
-        <button type="submit">Submit</button>
+        <label for="marca">Marca</label>
+        <input class="container-buttons" type="text" id="marca" formControlName="marca">
+      </div>
+      <div class="content-action-button">
+        <button class="button-cancel" mat-button mat-dialog-close>Cancelar</button>
+        <button type="submit" mat-button cdkFocusInitial>Guardar</button>
       </div>
     </form>
   </div>
-
-    <button mat-button mat-dialog-close>Cancelar</button>
-    <button mat-button cdkFocusInitial>Guardar</button>
 </div>
