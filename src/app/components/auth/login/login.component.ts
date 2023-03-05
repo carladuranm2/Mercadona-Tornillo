@@ -21,7 +21,7 @@ export class LoginComponent {
   }
 
   submit () {
-    if (this.loginUser.email ===  "carladuranm2@gmail.com" && this.loginUser.password ==="carlaDuran") {
+    if (this.loginUser.email ===  "mercadona@gmail.com" && this.loginUser.password ==="mercadona") {
       const token = "11111"
       localStorage.setItem('token', token);
       this.router.navigateByUrl('/tornillo');
