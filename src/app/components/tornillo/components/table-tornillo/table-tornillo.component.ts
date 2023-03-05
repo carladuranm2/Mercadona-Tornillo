@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { EliminarTornilloComponent } from '../eliminar-tornillo/eliminar-tornillo.component';
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'app-table-tornillo',
   templateUrl: './table-tornillo.component.html',
   styleUrls: ['./table-tornillo.component.scss']
