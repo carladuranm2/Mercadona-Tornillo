@@ -5,8 +5,8 @@ import {LoginModule} from './components/auth/login/login.module'
 
 const routes: Routes = [
   {path:'',loadChildren:()=>import('./components/home/home.module').then(m=> m.HomeModule),data:{Animation:'left'}},
-  { path: 'login', loadChildren: () => import('./components/auth/login/login.module').then(m => m.LoginModule), data: {animation: 'fadeIn'}, canActivate:[NoAccessGuard] },
-  {path:'tornillo',loadChildren:()=>import('./components/tornillo/tornillo.module').then(m=> m.TornilloModule),data:{Animation:'left'}},
+  { path: 'login', loadChildren: () => import('./components/auth/login/login.module').then(m => m.LoginModule), data: {animation: 'fadeIn'}},
+  {path:'tornillo',loadChildren:()=>import('./components/tornillo/tornillo.module').then(m=> m.TornilloModule),data:{Animation:'left'}, canActivate:[NoAccessGuard] },
 ];
 
 @NgModule({
