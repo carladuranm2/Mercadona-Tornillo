@@ -16,8 +16,8 @@ export class LoginComponent {
 
   }
   loginUser: loginUser = {
-    email: "carladuranm2@gmail.com",
-    password: "carlaDuran"
+    email: "mercadona@gmail.com",
+    password: "mercadona"
   }
 
   submit () {
