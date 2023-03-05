@@ -20,26 +20,20 @@ export class OrdenarColumnasTornilloComponent implements OnInit  {
     this.columns = data.name
   }
   ngOnInit () {
-    console.log(this.data.name,"data name");
 
   }
   closeConfiguration(){
     this.dialogRef.close();
   }
   drop(event: CdkDragDrop<string[]>) {
-    console.log('this.column before', this.columns)
     moveItemInArray(this.columns, event.previousIndex, event.currentIndex);
-    console.log('this.column after', this.columns)
   }
   result(){
     this.data.name = this.columns
-    console.log(this.data.name);
-
     this.dialogRef.close(this.columns);
 
   }
   toggleLock(column) {
-    console.log(column, " column");
     column.locked = !column.locked;
   }
 }

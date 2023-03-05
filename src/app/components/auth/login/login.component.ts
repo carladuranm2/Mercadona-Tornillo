@@ -19,8 +19,6 @@ export class LoginComponent {
   }
 
   submit(){
-    console.log(this.loginUser.email);
-    console.log(this.loginUser.password);
     this.router.navigateByUrl('/tornillo');
   }
 }

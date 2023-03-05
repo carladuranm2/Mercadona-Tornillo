@@ -24,7 +24,6 @@ export class TableTornilloComponent implements OnInit {
       {width:'600px',
       data: { item: i, itemTitle: this.itemTitle }},
       );
-    console.log("colummn delete", i);
   }
 
 }

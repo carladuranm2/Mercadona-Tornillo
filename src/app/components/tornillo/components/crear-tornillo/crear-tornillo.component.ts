@@ -25,7 +25,6 @@ export class CrearTornilloComponent implements OnInit {
 
   onSubmit(){
     if(this.newProduct.valid){
-      console.log(this.data.name, "son los productos");
       this.data.name.push(this.newProduct.value);
     }else {
       Swal.fire({
@@ -37,7 +36,6 @@ export class CrearTornilloComponent implements OnInit {
     this.dialogRef.close();
   }
   incrementarCantidad(){
-    console.log(this.newProduct.value.precio);
     this.cantidad = this.cantidad + 1;
     this.newProduct.value.precio.setValue(this.cantidad);
   }

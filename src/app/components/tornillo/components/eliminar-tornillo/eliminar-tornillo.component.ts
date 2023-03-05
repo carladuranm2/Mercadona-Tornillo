@@ -11,7 +11,6 @@ export class EliminarTornilloComponent {
   }
 
   delete(){
-    console.log(this.data.itemTitle[this.data.item].nombre, " elemento");
     this.data.itemTitle.splice(this.data.item, 1);
     this.dialogRef.close();
   }

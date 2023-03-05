@@ -155,7 +155,6 @@ export class TornilloComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.titles = result;
-        console.log(result,"resultado");
       }
     });
   }
