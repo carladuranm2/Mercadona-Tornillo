@@ -1,54 +1,60 @@
-<table cdkDropList cdkDropListOrientation="horizontal" class="table">
-  <thead class="bg-light">
-    <tr>
-      <th  *ngFor=" let title of titles" [style.display]="title.visible ? 'table-cell' : 'none'" >{{title.name}}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of itemTitle | paginate : { itemsPerPage: 5, currentPage: page };let i = index">
-      <td>
-        <div class="d-flex align-items-center">
-          <div class="ms-3">
-            <p class="text-muted mb-0">{{item.nombre}}</p>
+<div class="content-table">
+  <table cdkDropList cdkDropListOrientation="horizontal" class="table">
+    <thead class="bg-light">
+      <tr>
+        <th  *ngFor=" let title of titles" [style.display]="title.visible ? 'table-cell' : 'none'" >{{title.name}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of itemTitle | paginate : { itemsPerPage: itemsPerPage, currentPage: page };let i = index">
+        <td>
+          <div class="d-flex align-items-center">
+            <div class="ms-3">
+              <p class="text-muted mb-0">{{item.nombre}}</p>
+            </div>
           </div>
-        </div>
-      </td>
-      <td>
-        <p class="text-muted mb-0">{{item.precio}}</p>
-      </td>
-      <td>
-        <span class="badge badge-success rounded-pill d-inline">{{item.formato}}</span>
-      </td>
-      <td>{{item.marca}}</td>
-      <td>
-        <div (click)="delete(i)" style="text-align: center;">
-          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Items por pagina
-      </td>
-      <td>
-        20
-      </td>
-      <td>
-        1-20 de 200 items
-      </td>
-      <td>
-        1 de 10 paginas
-      </td>
-    </tr>
-  </tbody>
-</table>
+        </td>
+        <td>
+          <p class="text-muted mb-0">{{item.precio}}</p>
+        </td>
+        <td>
+          <span class="badge badge-success rounded-pill d-inline">{{item.formato}}</span>
+        </td>
+        <td>{{item.marca}}</td>
+        <td>
+          <div (click)="delete(i)" style="text-align: center;">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Items por pagina
+        </td>
+        <td>
+          20
+        </td>
+        <td>
+          1-20 de 200 items
+        </td>
+        <td>
+          1 de 10 paginas
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 <div class="d-flex justify-content-between">
   <div class="card-footer pb-0 pt-3">
-    5 of {{itemTitle.length}}
+    <select name="miselect" [(ngModel)]="itemsPerPage">
+      <option [value]="option"  *ngFor="let option of itemsPerPageOptions">{{option}}</option>
+      </select>
+      {{itemTitle.length}}
   </div>
   <div class="card-footer pb-0 pt-3">
     <pagination-controls (pageChange)="page=$event" previousLabel="" nextLabel=""
-      screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page">
+      screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page" [itemsPerPageOptions]="itemsPerPageOptions"
+      [(itemsPerPage)]="itemsPerPage">
     </pagination-controls>
   </div>
 </div>

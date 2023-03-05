@@ -14,11 +14,13 @@ export class TableTornilloComponent implements OnInit {
   @Input() titles: any;
   @Input() itemTitle: any;
   page: any;
+  itemsPerPageOptions: number[] = [5, 10, 20];
+  itemsPerPage: any = 10;
+  seleccionado: any = '';
 
   constructor(public dialog: MatDialog) {
   }
   ngOnInit () {
-
   }
   delete (i: number) {
     this.dialog.open(EliminarTornilloComponent,
