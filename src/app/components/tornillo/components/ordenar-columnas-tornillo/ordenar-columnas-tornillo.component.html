@@ -1,0 +1,21 @@
+<div class="content-configuration">
+  <div class="header-configuration">
+    <h3>Reordenar,fijar u ocultar las columnas de la tabla</h3>
+    <div (click)="closeConfiguration()">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon>
+    </div>
+  </div>
+  <h2>configurar columnas</h2>
+  <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let column of columns; let i = index" cdkDrag>
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="dialpad icon"></mat-icon>
+      <input type="checkbox" [(ngModel)]="column.visible"> {{ column.name }}
+      <span class="lock-icon" [class.locked]="column.locked" (click)="toggleLock(column)"></span>
+      <i class="fa" [class.fa-lock]="column.locked" [class.fa-unlock]="!column.locked"></i>
+    </div>
+  </div>
+  <div class="content-action-button">
+    <button class="button-cancel" mat-button mat-dialog-close>Cancelar</button>
+    <button type="submit" mat-button cdkFocusInitial (click)="result()">Aplicar</button>
+  </div>
+</div>
