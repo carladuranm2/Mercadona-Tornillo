@@ -20,6 +20,7 @@ export class HeaderComponent {
 
   logOut(){
     this.router.navigateByUrl('/');
+    localStorage.removeItem('token');
   }
   backToHomePage(){
     this.router.navigateByUrl('/');
