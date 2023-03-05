@@ -32,10 +32,12 @@
 </div>
 <div class="d-flex justify-content-between">
   <div class="card-footer pb-0 pt-3">
-    <select name="miselect" [(ngModel)]="itemsPerPage">
+    <select name="miselect" class="select-pagination" [(ngModel)]="itemsPerPage">
       <option [value]="option"  *ngFor="let option of itemsPerPageOptions">{{option}}</option>
       </select>
-      {{itemTitle.length}}
+      <div class="label-items-pagination">
+        {{itemTitle.length}}
+      </div>
   </div>
   <div class="card-footer pb-0 pt-3">
     <pagination-controls (pageChange)="page=$event" previousLabel="" nextLabel=""
