@@ -113,6 +113,7 @@ export class TornilloComponent implements OnInit {
   pageSize: number = 0;
   previousPage: number = 0;
   showPagination: boolean = false;
+  isLoading:boolean = true;
   page: any;
   order: any;
   currentPage: number = 0;
@@ -131,9 +132,11 @@ export class TornilloComponent implements OnInit {
   }
 
   getDataTableService () {
+    this.isLoading = true;
     setTimeout(() => {
       this.tableItems = EXAMPLE_DATA
       this.tableItemsToFilter = EXAMPLE_DATA
+      this.isLoading= false;
     }, 2000)
   }
 

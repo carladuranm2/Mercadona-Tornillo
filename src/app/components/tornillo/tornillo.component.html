@@ -1,9 +1,12 @@
-<app-header [inicioSesion]="true" [cerrarSesion]="false"></app-header>
+<app-header [inicioSesion]="false" [cerrarSesion]="true"></app-header>
 <div class="content-body-tornillo">
   <div class="icon-configuration" (click)="openConfiguration()">
     <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="settings"></mat-icon>
   </div>
-  <app-table-tornillo [titles]="titles" [itemTitle]="tableItems"></app-table-tornillo>
+  <app-loading-progress [isLoading]="isLoading" ></app-loading-progress>
+  <div *ngIf="!isLoading">
+    <app-table-tornillo  [titles]="titles" [itemTitle]="tableItems"></app-table-tornillo>
+  </div>
   <div class="button-add-product">
     <button (click)="openCreateProduct()">
       Anadir Producto
