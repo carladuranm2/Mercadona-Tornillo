@@ -11,6 +11,8 @@ padding: 20px;
 
 .container-button-card{
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .button-card{
@@ -19,4 +21,7 @@ padding: 20px;
   border: none;
   padding: 15px;
   border-radius: 5px;
+}
+.mouse-pointer{
+cursor: pointer;
 }
