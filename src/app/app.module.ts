@@ -9,6 +9,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSliderModule } from '@angular/material/slider';
 import { SharedModule } from './shared/shared.module';
+import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { SharedModule } from './shared/shared.module';
     MatDialogModule,
     MatFormFieldModule,
     SharedModule,
-    MatSliderModule
+    MatSliderModule,
+    MatIconModule,
+    HttpClientModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
