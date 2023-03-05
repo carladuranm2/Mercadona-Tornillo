@@ -4,6 +4,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { HomeComponent } from './home.component';
 import { HomePageTornillosComponent } from './components/home-page-tornillos/home-page-tornillos.component';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,9 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     HomeRoutingModule,
-    SharedModule
+    SharedModule,
+    MatIconModule,
+
   ]
 })
 export class HomeModule { }
