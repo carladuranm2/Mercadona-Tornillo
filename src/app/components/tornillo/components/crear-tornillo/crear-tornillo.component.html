@@ -11,7 +11,7 @@
           <label for="precio">Precio</label>
           <!-- <input matInput  style="width: 100px;" class="container-buttons" type="number"  id="precio" min="0" max="10" [formControl]="newProduct.value.precio"> -->
           <div class="button-container container-buttons">
-            <button mat-button matSuffix (click)="incrementarCantidad()"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add"></mat-icon>
+            <button mat-button matSuffix type="button" (click)="incrementarCantidad()"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add"></mat-icon>
             </button>
             {{cantidad}}
             <button mat-button matSuffix (click)="decrementarCantidad()"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="remove"></mat-icon>
@@ -22,9 +22,9 @@
           <mat-label>Formato</mat-label>
             <select  class="select-formato"   formControlName="formato" >
               <option value="">Seleccione un valor</option>
-              <option value="apple">Tornillo rosado</option>
-              <option value="banana">Tornillo morado</option>
-              <option value="orange">Tornillo naranja</option>
+              <option value="Tornillo rosado">Tornillo rosado</option>
+              <option value="Tornillo morado">Tornillo morado</option>
+              <option value="Tornillo naranja">Tornillo naranja</option>
             </select>
         </div>
       </div>
