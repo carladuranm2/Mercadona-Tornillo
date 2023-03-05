@@ -13,7 +13,6 @@ export class NoAccessGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     let token = localStorage.getItem('token');
     if (token) {
-      console.log("entre al if");
       return true;
         }else{
           this.router.navigate(['/login']);

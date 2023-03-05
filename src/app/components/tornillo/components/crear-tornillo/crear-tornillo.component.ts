@@ -47,7 +47,6 @@ export class CrearTornilloComponent implements OnInit {
   incrementarCantidad () {
     this.cantidad = this.cantidad + 1;
     this.newProduct.get('precio').setValue(this.cantidad);
-    console.log(this.cantidad, "k e paza");
 
   }
   decrementarCantidad () {
